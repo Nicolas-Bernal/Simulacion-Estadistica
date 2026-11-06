@@ -41,7 +41,7 @@ $$
 y_i \mid \delta \sim \delta\,\mathcal{N}(7,0.5^2)+(1-\delta)\,\mathcal{N}(10,0.5^2), \qquad 0<\delta<1.
 $$
 
-Usamos la priori $\delta\sim\operatorname{Unif}(0,1)$. La posteriori, salvo una constante de normalización, es:
+Usamos la priori $\delta\sim\text{Unif}(0,1)$. La posteriori, salvo una constante de normalización, es:
 
 $$
 \pi(\delta\mid y) \propto \prod_{i=1}^{n}\left[\delta\,\phi(y_i;7,0.5^2)+(1-\delta)\,\phi(y_i;10,0.5^2)\right].
@@ -63,8 +63,8 @@ $$
 
 | Propuesta | Comportamiento en este ejemplo |
 | --- | --- |
-| $\operatorname{Beta}(1,1)$ | Es uniforme y cubre la región posterior relevante; en el ejemplo explora el espacio con rapidez. |
-| $\operatorname{Beta}(2,10)$ | Se concentra en valores pequeños y casi no propone cerca de $\delta\approx0.7$; puede producir largos periodos de estancamiento. |
+| $\text{Beta}(1,1)$ | Es uniforme y cubre la región posterior relevante; en el ejemplo explora el espacio con rapidez. |
+| $\text{Beta}(2,10)$ | Se concentra en valores pequeños y casi no propone cerca de $\delta\approx0.7$; puede producir largos periodos de estancamiento. |
 
 Aunque ambas propuestas tienen soporte en $(0,1)$, su desempeño práctico puede ser distinto. Las trayectorias ilustran la diferencia:
 
@@ -82,7 +82,7 @@ $$
 X^* = X^{(t)} + \epsilon, \qquad \epsilon\sim h.
 $$
 
-Son opciones comunes $\epsilon\sim\operatorname{Unif}(-a,a)$ y $\epsilon\sim\mathcal{N}(0,\sigma^2)$. Si $h$ es simétrica alrededor de cero, la razón de aceptación se simplifica a:
+Son opciones comunes $\epsilon\sim\text{Unif}(-a,a)$ y $\epsilon\sim\mathcal{N}(0,\sigma^2)$. Si $h$ es simétrica alrededor de cero, la razón de aceptación se simplifica a:
 
 $$
 r(x^{(t)},x^*)=\frac{\pi(x^*)}{\pi(x^{(t)})}.
@@ -95,14 +95,14 @@ La propuesta puede aceptar movimientos hacia regiones de menor densidad, lo cual
 Como $\delta$ debe permanecer en $(0,1)$, una caminata directa puede proponer valores fuera del soporte. La transformación logit permite proponer en toda la recta real:
 
 $$
-u=\operatorname{logit}(\delta)=\log\left(\frac{\delta}{1-\delta}\right), \qquad
-\delta=\operatorname{logit}^{-1}(u)=\frac{1}{1+e^{-u}}.
+u=\text{logit}(\delta)=\log\left(\frac{\delta}{1-\delta}\right), \qquad
+\delta=\text{logit}^{-1}(u)=\frac{1}{1+e^{-u}}.
 $$
 
 Se propone $u^*=u^{(t)}+\epsilon$. La densidad objetivo transformada incluye el Jacobiano:
 
 $$
-\pi_u(u\mid y)=\pi_\delta(\operatorname{logit}^{-1}(u)\mid y)\,\delta(1-\delta).
+\pi_u(u\mid y)=\pi_\delta(\text{logit}^{-1}(u)\mid y)\,\delta(1-\delta).
 $$
 
 Para una propuesta simétrica en el espacio $u$, la razón de aceptación es:

@@ -26,7 +26,7 @@ $$
 \alpha(X^{(t)},Y)=\min\{1,r(X^{(t)},Y)\}.
 $$
 
-1. **Aceptar o rechazar:** generar $U\sim\operatorname{Uniforme}(0,1)$. Si $U\leq\alpha(X^{(t)},Y)$, establecer $X^{(t+1)}=Y$; de lo contrario, conservar el estado actual: $X^{(t+1)}=X^{(t)}$.
+1. **Aceptar o rechazar:** generar $U\sim\text{Uniforme}(0,1)$. Si $U\leq\alpha(X^{(t)},Y)$, establecer $X^{(t+1)}=Y$; de lo contrario, conservar el estado actual: $X^{(t+1)}=X^{(t)}$.
 
 Si $\pi$ solo se conoce salvo una constante, puede usarse cualquier función $\tilde{\pi}(x)\propto\pi(x)$ en la razón: la constante común se cancela. Si la propuesta inversa tiene probabilidad o densidad cero, la propuesta se rechaza ($\alpha=0$).
 
