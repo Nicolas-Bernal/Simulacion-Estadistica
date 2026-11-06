@@ -8,7 +8,7 @@ Sea $\pi(x)$ una densidad objetivo conocida salvo una constante de normalizació
 2. Calcula la razón de aceptación:
 
 $$
-r(x^{(t)},x^*) = \frac{\pi(x^*)\,q(x^{(t)}\mid x^*)}{\pi(x^{(t)})\,q(x^*\mid x^{(t)})}.
+r(x^{(t)}, x^*) = \frac{\pi(x^*) \, q(x^{(t)} \mid x^*)}{\pi(x^{(t)}) \, q(x^* \mid x^{(t)})}
 $$
 
 1. Acepta el candidato con probabilidad $\alpha = \min(1,r)$. Si lo rechaza, conserva el estado actual.
@@ -26,7 +26,7 @@ $$
 Por tanto, la razón de aceptación es:
 
 $$
-r(x^{(t)},x^*) = \frac{\pi(x^*)\,g(x^{(t)})}{\pi(x^{(t)})\,g(x^*)}.
+r(x^{(t)}, x^*) = \frac{\pi(x^*) \, q(x^{(t)} \mid x^*)}{\pi(x^{(t)}) \, q(x^* \mid x^{(t)})}
 $$
 
 Si definimos el peso de importancia $w(x)=\pi(x)/g(x)$, entonces $r=w(x^*)/w(x^{(t)})$. Una propuesta útil debe parecerse a la distribución objetivo y cubrir su soporte. Si la cadena está en un estado con peso alto y la propuesta rara vez visita regiones relevantes de $\pi$, puede quedarse estancada durante mucho tiempo.
@@ -49,14 +49,14 @@ $$
 
 El ejemplo ilustrado usa 100 observaciones generadas con $\delta=0.7$.
 
-![image.png](../../imagenes/image.png)
+![image.png](../imagenes/image.png)
 
 ### Usar la priori como propuesta
 
 Si la propuesta es la priori uniforme, $g(\delta)=1$ en $(0,1)$, la razón de aceptación queda como una razón de verosimilitudes:
 
 $$
-r(\delta^{(t)},\delta^*) = \frac{L(\delta^*\mid y)}{L(\delta^{(t)}\mid y)}.
+r(\delta^{(t)}, \delta^*) = \frac{L(\delta^* \mid y)}{L(\delta^{(t)} \mid y)}
 $$
 
 ### Comparación de propuestas independientes
@@ -85,7 +85,7 @@ $$
 Son opciones comunes $\epsilon\sim\text{Unif}(-a,a)$ y $\epsilon\sim\mathcal{N}(0,\sigma^2)$. Si $h$ es simétrica alrededor de cero, la razón de aceptación se simplifica a:
 
 $$
-r(x^{(t)},x^*)=\frac{\pi(x^*)}{\pi(x^{(t)})}.
+r(x^{(t)}, x^*) = \frac{\pi(x^*)}{\pi(x^{(t)})}
 $$
 
 La propuesta puede aceptar movimientos hacia regiones de menor densidad, lo cual permite explorar la distribución.
@@ -108,7 +108,7 @@ $$
 Para una propuesta simétrica en el espacio $u$, la razón de aceptación es:
 
 $$
-r(u^{(t)},u^*) = \frac{\pi_\delta(\delta^*\mid y)\,\delta^*(1-\delta^*)}{\pi_\delta(\delta^{(t)}\mid y)\,\delta^{(t)}(1-\delta^{(t)})}.
+r(u^{(t)}, u^*) = \frac{\pi_\delta(\delta^* \mid y) \, \delta^* (1 - \delta^*)}{\pi_\delta(\delta^{(t)} \mid y) \, \delta^{(t)} (1 - \delta^{(t)})}
 $$
 
 La figura muestra trayectorias de una caminata aleatoria después de transformar el parámetro:
