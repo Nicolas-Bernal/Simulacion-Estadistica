@@ -49,7 +49,7 @@ $$
 
 El ejemplo ilustrado usa 100 observaciones generadas con $\delta=0.7$.
 
-![image.png](imagenes/image.png)
+![image.png](../../imagenes/image.png)
 
 ### Usar la priori como propuesta
 
@@ -68,11 +68,11 @@ $$
 
 Aunque ambas propuestas tienen soporte en $(0,1)$, su desempeño práctico puede ser distinto. Las trayectorias ilustran la diferencia:
 
-![image.png](imagenes/image%201.png)
+![image.png](../imagenes/image%201.png)
 
 En el ejemplo se descartaron las primeras 200 iteraciones como calentamiento (*burn-in*). Los histogramas posteriores muestran que la propuesta uniforme representa mejor la distribución objetivo. El calentamiento no corrige por sí solo una propuesta deficiente ni demuestra convergencia.
 
-![image.png](imagenes/image%202.png)
+![image.png](../imagenes/image%202.png)
 
 ## 4. Cadenas de caminata aleatoria
 
@@ -113,7 +113,7 @@ $$
 
 La figura muestra trayectorias de una caminata aleatoria después de transformar el parámetro:
 
-![image.png](imagenes/image%203.png)
+![image.png](../imagenes/image%203.png)
 
 ## 6. Escala de la propuesta y diagnóstico
 
