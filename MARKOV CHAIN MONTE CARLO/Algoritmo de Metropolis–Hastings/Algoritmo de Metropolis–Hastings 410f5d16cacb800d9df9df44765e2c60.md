@@ -35,7 +35,7 @@ Si $\pi$ solo se conoce salvo una constante, puede usarse cualquier función $\t
 Si $q(y\mid x)=q(x\mid y)$, los términos de propuesta se cancelan y queda:
 
 $$
-r(x,y)=\frac{\pi(y)}{\pi(x)},\qquad \alpha(x,y)=\min\left\{1,\frac{\pi(y)}{\pi(x)}\right\}.
+r(x,y)=\frac{\pi(y)}{\pi(x)},\qquad \alpha(x,y)=\min\left[1,\frac{\pi(y)}{\pi(x)}\right].
 $$
 
 Este caso particular se conoce como **algoritmo de Metropolis**.
