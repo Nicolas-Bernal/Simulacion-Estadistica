@@ -4,11 +4,11 @@
 
 Sea $\pi(x)$ una densidad objetivo conocida salvo una constante de normalización. En cada iteración, desde el estado actual $x^{(t)}$:
 
-1. Genera un candidato $x^* \sim q(\cdot \mid x^{(t)})$.
+1. Genera un candidato $x^a \sim q(\cdot \mid x^{(t)})$.
 2. Calcula la razón de aceptación:
 
 $$
-r(x^{(t)}, x^*) = \frac{\pi(x^*) \, q(x^{(t)} \mid x^*)}{\pi(x^{(t)}) \, q(x^* \mid x^{(t)})}
+r(x^{(t)}, x^a) = \frac{\pi(x^a) \, q(x^{(t)} \mid x^a)}{\pi(x^{(t)}) \, q(x^a \mid x^{(t)})}
 $$
 
 1. Acepta el candidato con probabilidad $\alpha = \min(1,r)$. Si lo rechaza, conserva el estado actual.
@@ -20,16 +20,16 @@ La constante desconocida de $\pi$ se cancela en la razón.
 En una cadena de independencia, la propuesta no depende del estado actual:
 
 $$
-q(x^* \mid x^{(t)}) = g(x^*).
+q(x^a \mid x^{(t)}) = g(x^a).
 $$
 
 Por tanto, la razón de aceptación es:
 
 $$
-r(x^{(t)}, x^*) = \frac{\pi(x^*) \, q(x^{(t)} \mid x^*)}{\pi(x^{(t)}) \, q(x^* \mid x^{(t)})}
+r(x^{(t)}, x^a) = \frac{\pi(x^a) \, q(x^{(t)} \mid x^a)}{\pi(x^{(t)}) \, q(x^a \mid x^{(t)})}
 $$
 
-Si definimos el peso de importancia $w(x)=\pi(x)/g(x)$, entonces $r=w(x^*)/w(x^{(t)})$. Una propuesta útil debe parecerse a la distribución objetivo y cubrir su soporte. Si la cadena está en un estado con peso alto y la propuesta rara vez visita regiones relevantes de $\pi$, puede quedarse estancada durante mucho tiempo.
+Si definimos el peso de importancia $w(x)=\pi(x)/g(x)$, entonces $r=w(x^a)/w(x^{(t)})$. Una propuesta útil debe parecerse a la distribución objetivo y cubrir su soporte. Si la cadena está en un estado con peso alto y la propuesta rara vez visita regiones relevantes de $\pi$, puede quedarse estancada durante mucho tiempo.
 
 La condición $g(x)>0$ donde $\pi(x)>0$ es necesaria para explorar la distribución objetivo, pero no garantiza buena mezcla en una corrida finita.
 
@@ -79,13 +79,13 @@ En el ejemplo se descartaron las primeras 200 iteraciones como calentamiento (*b
 En una caminata aleatoria, el candidato se obtiene perturbando el estado actual:
 
 $$
-X^* = X^{(t)} + \epsilon, \qquad \epsilon\sim h.
+x^a = X^{(t)} + \epsilon, \qquad \epsilon\sim h.
 $$
 
 Son opciones comunes $\epsilon\sim\text{Unif}(-a,a)$ y $\epsilon\sim\mathcal{N}(0,\sigma^2)$. Si $h$ es simétrica alrededor de cero, la razón de aceptación se simplifica a:
 
 $$
-r(x^{(t)}, x^*) = \frac{\pi(x^*)}{\pi(x^{(t)})}
+r(x^{(t)}, x^a) = \frac{\pi(x^a)}{\pi(x^{(t)})}
 $$
 
 La propuesta puede aceptar movimientos hacia regiones de menor densidad, lo cual permite explorar la distribución.
