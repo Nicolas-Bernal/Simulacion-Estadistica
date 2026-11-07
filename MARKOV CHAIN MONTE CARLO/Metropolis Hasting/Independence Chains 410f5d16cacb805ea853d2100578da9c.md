@@ -56,7 +56,7 @@ El ejemplo ilustrado usa 100 observaciones generadas con $\delta=0.7$.
 Si la propuesta es la priori uniforme, $g(\delta)=1$ en $(0,1)$, la razón de aceptación queda como una razón de verosimilitudes:
 
 $$
-r(\delta^{(t)}, \delta^*) = \frac{L(\delta^* \mid y)}{L(\delta^{(t)} \mid y)}
+r(\delta^{(t)}, \delta^a) = \frac{L(\delta^a \mid y)}{L(\delta^{(t)} \mid y)}
 $$
 
 ### Comparación de propuestas independientes
@@ -108,7 +108,7 @@ $$
 Para una propuesta simétrica en el espacio $u$, la razón de aceptación es:
 
 $$
-r(u^{(t)}, u^*) = \frac{\pi_\delta(\delta^* \mid y) \, \delta^* (1 - \delta^*)}{\pi_\delta(\delta^{(t)} \mid y) \, \delta^{(t)} (1 - \delta^{(t)})}
+r(u^{(t)}, u^*) = \frac{\pi_\delta(\delta^a \mid y) \, \delta^a (1 - \delta^a)}{\pi_\delta(\delta^{(t)} \mid y) \, \delta^{(t)} (1 - \delta^{(t)})}
 $$
 
 La figura muestra trayectorias de una caminata aleatoria después de transformar el parámetro:
